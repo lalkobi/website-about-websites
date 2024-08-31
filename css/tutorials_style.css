@@ -1,0 +1,163 @@
+/* === Global Styles === */
+/* General body styling applied across all pages */
+body {
+  background-color: #23272a;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Sidebar Styling === */
+/* Sidebar structure and icon container layout */
+.sidebar {
+  background-color: #23272a; /* Discord background color */
+  height: 70vh;
+  position: fixed; /* Keep the sidebar fixed on the left */
+  top: 0;
+  left: 0;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* Ensure the sidebar appears above other content */
+}
+
+/* Icon container - Flexbox settings */
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+/* Individual icon item styling */
+.icon-item {
+  position: relative; /* This allows positioning the tooltip relative to the container */
+  margin-bottom: 20px; /* Add space between each icon */
+}
+
+/* Icon styling */
+.icon-item i {
+  font-size: 50px;
+  color: white;
+  transition: color 0.3s;
+}
+
+/* Add tooltip using ::after pseudo-element */
+.icon-item i::after {
+  content: attr(data-label); /* Tooltip text from data-label attribute */
+  position: absolute;
+  left: calc(100% + 10px); /* Position tooltip to the right of the icon */
+  top: 50%;
+  transform: translateY(-50%); /* Center the tooltip vertically */
+  background-color: #2c2f33; /* Discord dark background color */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif; /* Ensure the correct font is used */
+  white-space: nowrap; /* Prevent text wrapping */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Show the tooltip on hover */
+.icon-item:hover i::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0px); /* Keep tooltip aligned */
+}
+
+/* Icon hover effect */
+.icon-item:hover i {
+  color: #7289da; /* Discord's purple color on hover */
+}
+
+/* === Footer Styling === */
+/* Link styling within the footer */
+.footer a {
+  color: #7289da; /* Discord purple */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Adds an underline on hover */
+}
+
+/* Footer Center Left and Right Sections */
+.footer-center-left p:first-child,
+.footer-center-right p:first-child {
+  font-weight: bolder; /* Make the first paragraph bold */
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #23272a; /* Discord's background color */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: calc(100% - 80px); /* Adjusts for sidebar width */
+  margin-left: 80px;
+  font-size: 14px;
+  border-top: 1px solid #2c2f33; /* Adds a subtle top border */
+  position: fixed; /* Fixed positioning for always-on-bottom effect */
+  bottom: 0; /* Align the footer to the bottom */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduce gap to make it more compact */
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px; /* Ensure sections do not shrink too much */
+}
+
+/* Footer Section Alignments */
+.footer-left {
+  text-align: left;
+  font-weight: bolder;
+}
+
+.footer-center-left {
+  text-align: center;
+}
+
+.footer-center-right {
+  text-align: center;
+}
+
+.footer-right {
+  text-align: right;
+  font-size: 12px;
+  padding-top: 50px;
+  padding-right: 50px;
+  color: #b9bbbe;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #7289da; /* Discord purple on hover */
+}
+
+/* === Responsive adjustments for smaller screens === */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-around; /* Spread out items horizontally */
+ 
