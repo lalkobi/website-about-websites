@@ -160,4 +160,201 @@ body {
     .footer-container {
         flex-direction: row;
         justify-content: space-around; /* Spread out items horizontally */
- 
+        align-items: center;
+        flex-wrap: wrap;
+    }
+  
+    .footer-section {
+        text-align: center;
+        margin-bottom: 10px; /* Reduced margin to make footer smaller */
+    }
+  
+    .footer-right {
+        margin-bottom: 0;
+        padding-top: 20px; /* Reduced padding to save space */
+        padding-right: 20px;
+    }
+
+
+  .sajid-videos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-container {
+    width: 100%; /* Each video takes up the full width on smaller screens */
+  }
+
+  .gradient-button.sajid-button {
+    width: 100%; /* Button takes full width on smaller screens */
+  }
+}
+
+
+/* Fixed Title Styling */
+.fixed-title {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 80px); /* Ensure the title does not overlap with the sidebar */
+  padding: 20px 0;
+  text-align: center;
+  z-index: 100;
+  left: 80px; /* Adjust position to account for the sidebar width */
+}
+
+/* Gradient Title Styling */
+.gradient-title {
+  font-size: 36px;
+  background: -webkit-linear-gradient(90deg, #7289da, #99aab5); /* Safari 5.1-6, Chrome 10-25 */
+  background: -moz-linear-gradient(90deg, #7289da, #99aab5); /* Firefox 3.6-15 */
+  background: linear-gradient(90deg, #7289da, #99aab5); /* Modern browsers */
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s ease infinite;
+  margin: 0; /* Remove default margin */
+  padding-top: 10px; /* Remove default padding */
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* Sajid Section Styling */
+.section.sajid {
+  text-align: center;
+  max-width: 1200px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the section horizontally */
+}
+
+/* Sajid Videos Container */
+.sajid-videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow videos to wrap on smaller screens */
+  margin-top: 20px;
+  gap: 20px; /* Space between the video containers */
+}
+
+/* Individual Video Container */
+.video-container {
+  flex: 1 1 45%; /* Flexibility to adjust width and wrap */
+  max-width: 560px; /* Ensure videos don’t exceed max width */
+  text-align: center; /* Center the text below videos */
+}
+
+.video-container p {
+  font-size: 16px;
+  color: #b9bbbe;
+  margin-top: 10px;
+}
+
+/* Gradient Button Styling for Sajid */
+.gradient-button.sajid-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #7289da, #99aab5); /* Discord purple to grey gradient */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.gradient-button.sajid-button:hover {
+  box-shadow: 0 0 15px #7289da; /* Add a glow effect on hover */
+}
+
+
+/* Snap Scrolling Container */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  height: 100vh; /* Ensure it fills the entire viewport height */
+  overflow-y: scroll; /* Enable scrolling */
+  scroll-behavior: smooth; /* Optional: Smooth scrolling effect */
+  padding-top: 100px; /* Add padding to prevent content from being hidden behind the fixed title */
+}
+
+/* Snap Section */
+.snap-section {
+  scroll-snap-align: start;
+  min-height: calc(100vh - 100px); /* Adjust height to account for fixed title */
+  padding: 150px 50px 20px; /* Add padding at the top to push content below the fixed title */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Help Section Styling */
+.section.help {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 80px; /* Increased padding at the bottom for better spacing */
+  padding-top: 40px; /* Added padding at the top to move content higher */
+}
+
+/* Resources Container */
+.resource-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px; /* Increased gap for better spacing between items */
+  margin-top: 30px; /* Keeps the margin consistent with the new spacing */
+  width: 100%; /* Ensure container takes full width to center-align the content */
+}
+
+/* Individual Resource Styling */
+.resource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px; /* Limit width of each resource for better alignment */
+  padding-bottom: 250px;
+}
+
+/* Font Awesome Icon Styling */
+.resource i {
+  font-size: 100px;
+  color: #7289da;
+  margin-bottom: 10px; /* Increased margin for better spacing below the icons */
+}
+
+/* Resource Text Styling */
+.resource p {
+  font-size: 16px;
+  color: #b9bbbe;
+  margin-top: 30px; /* Slightly increased margin for better spacing above the text */
+  text-align: center;
+}
+
+/* Gradient Button Styling */
+.gradient-button {
+  display: inline-block;
+  padding: 15px 30px; /* Slightly increased padding for a more prominent button */
+  background: linear-gradient(90deg, #7289da, #99aab5);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 30px; /* Increased margin above the button for better spacing */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.gradient-button:hover {
+  box-shadow: 0 0 15px #7289da;
+}

@@ -28,4 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Set an interval to toggle the bubb
+    // Set an interval to toggle the bubbles every 4 seconds
+    setInterval(toggleBubbles, 4000);
+});
