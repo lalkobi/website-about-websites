@@ -9,18 +9,30 @@ body {
 }
 
 /* === Sidebar Styling === */
+/* Sidebar Background - Full height */
+.sidebar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height */
+  width: 80px; /* Same width as the sidebar */
+  background-color: #23272a; /* Same background color as the sidebar */
+  z-index: 999; /* Ensure it stays behind the sidebar */
+}
+
 /* Sidebar structure and icon container layout */
 .sidebar {
   background-color: #23272a; /* Discord background color */
-  height: 70vh;
-  position: fixed; /* Keep the sidebar fixed on the left */
-  top: 0;
+  top: 0; /* Align with the top */
   left: 0;
+  height: 70vh;
+  position: fixed;
   width: 80px;
   display: flex;
   justify-content: center;
   z-index: 1000; /* Ensure the sidebar appears above other content */
 }
+
 
 /* Icon container - Flexbox settings */
 .icon-container {
@@ -228,6 +240,13 @@ body {
   }
 }
 
+.main-content {
+  margin-left: 80px; /* Account for the sidebar */
+  padding-right: 20px; /* Add some padding to the right to prevent content from touching the edge */
+  padding-bottom: 100px; /* Ensure space for footer */
+  box-sizing: border-box;
+}
+
 /* Sajid Section Styling */
 .section.sajid {
   text-align: center;
@@ -235,13 +254,21 @@ body {
   margin: 0 auto; /* Center the section horizontally */
 }
 
+/* Ensure YouTube videos are responsive */
+.sajid-videos iframe {
+  width: 100%; /* Make the video take up the full width of its container */
+  height: auto; /* Maintain the aspect ratio of the video */
+}
+
 /* Sajid Videos Container */
 .sajid-videos {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Allow videos to wrap on smaller screens */
-  margin-top: 20px;
   gap: 20px; /* Space between the video containers */
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Individual Video Container */
@@ -251,10 +278,26 @@ body {
   text-align: center; /* Center the text below videos */
 }
 
+
 .video-container p {
   font-size: 16px;
   color: #b9bbbe;
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .sajid-videos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-container {
+    width: 100%; /* Each video takes up the full width on smaller screens */
+  }
+
+  .gradient-button.sajid-button {
+    width: 100%; /* Button takes full width on smaller screens */
+  }
 }
 
 /* Gradient Button Styling for Sajid */
@@ -274,6 +317,7 @@ body {
 }
 
 
+
 /* Snap Scrolling Container */
 .snap-container {
   scroll-snap-type: y mandatory;
@@ -285,14 +329,27 @@ body {
 
 /* Snap Section */
 .snap-section {
+  margin-left: 80px; /* Prevent overlap with sidebar on larger screens */
+  padding-right: 20px; /* Ensure proper padding */
+  padding-left: 20px;
   scroll-snap-align: start;
   min-height: calc(100vh - 100px); /* Adjust height to account for fixed title */
-  padding: 150px 50px 20px; /* Add padding at the top to push content below the fixed title */
+  padding-top: 150px; /* Add padding at the top to push content below the fixed title */
+  padding-bottom: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .snap-section {
+    margin-left: 0; /* Remove the left margin on smaller screens */
+    padding-left: 20px; /* Add padding to maintain spacing */
+    padding-right: 20px; /* Add padding to maintain spacing */
+  }
 }
 
 /* Help Section Styling */
@@ -306,6 +363,16 @@ body {
   justify-content: center;
   padding-bottom: 80px; /* Increased padding at the bottom for better spacing */
   padding-top: 40px; /* Added padding at the top to move content higher */
+  margin-left: 80px; /* Prevent overlap with sidebar */
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .section.help {
+    margin-left: 0; /* Remove the left margin on smaller screens */
+    padding-left: 20px; /* Add padding to maintain spacing */
+    padding-right: 20px; /* Add padding to maintain spacing */
+  }
 }
 
 /* Resources Container */

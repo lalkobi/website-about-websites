@@ -6,12 +6,25 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-}
+} 
 
 /* === Sidebar Styling === */
+/* Sidebar Background - Full height */
+.sidebar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height */
+  width: 80px; /* Same width as the sidebar */
+  background-color: #23272a; /* Same background color as the sidebar */
+  z-index: 999; /* Ensure it stays behind the sidebar */
+}
+
 /* Sidebar structure and icon container layout */
 .sidebar {
   background-color: #23272a; /* Discord background color */
+  top: 0; /* Align with the top */
+  left: 0;
   height: 70vh;
   position: fixed;
   width: 80px;
@@ -19,6 +32,7 @@ body {
   justify-content: center;
   z-index: 1000; /* Ensure the sidebar appears above other content */
 }
+
 
 /* Icon container - Flexbox settings */
 .icon-container {
@@ -190,7 +204,25 @@ body {
   gap: 20px;
   padding: 20px;
   margin-top: 20px;
+  align-items: center; /* Center the title vertically if needed */
+  text-align: center; /* Center the text within the title */
+  width: 100%; /* Ensure it takes the full width */
 }
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .head {
+    justify-content: center; /* Ensure title remains centered */
+    padding-left: 0; /* Remove padding that might push the title */
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .gradient-title {
+    font-size: 28px; /* Adjust the title size for better visibility on small screens */
+  }
+}
+
 
 /* Cards Container Styling */
 .cards-container {

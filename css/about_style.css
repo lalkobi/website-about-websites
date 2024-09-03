@@ -9,9 +9,22 @@ body {
 }
 
 /* === Sidebar Styling === */
+/* Sidebar Background - Full height */
+.sidebar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height */
+  width: 80px; /* Same width as the sidebar */
+  background-color: #23272a; /* Same background color as the sidebar */
+  z-index: 999; /* Ensure it stays behind the sidebar */
+}
+
 /* Sidebar structure and icon container layout */
 .sidebar {
   background-color: #23272a; /* Discord background color */
+  top: 0; /* Align with the top */
+  left: 0;
   height: 70vh;
   position: fixed;
   width: 80px;

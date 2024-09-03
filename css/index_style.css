@@ -9,9 +9,22 @@ body {
 }
 
 /* === Sidebar Styling === */
+/* Sidebar Background - Full height */
+.sidebar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height */
+  width: 80px; /* Same width as the sidebar */
+  background-color: #23272a; /* Same background color as the sidebar */
+  z-index: 999; /* Ensure it stays behind the sidebar */
+}
+
 /* Sidebar structure and icon container layout */
 .sidebar {
   background-color: #23272a; /* Discord background color */
+  top: 0; /* Align with the top */
+  left: 0;
   height: 70vh;
   position: fixed;
   width: 80px;
@@ -41,7 +54,7 @@ body {
   color: white;
   transition: color 0.3s;
 }
-
+ 
 /* Tooltip styling that appears when an icon is hovered */
 .icon-item i::after {
   content: attr(data-label); /* Tooltip text from data-label attribute */
@@ -181,6 +194,8 @@ body {
   height: 100vh;
   background-color: #23272a;
   position: relative;
+  flex-direction: column; /* Stack content vertically */
+  padding: 20px; /* Add padding to prevent content from touching edges */
 }
 
 /* Wumpus Container */
@@ -190,12 +205,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the user tag and Wumpus horizontally */
+  justify-content: center; /* Ensure the container itself is centered vertically */
+  position: relative;
+  margin: 0 auto; /* Center horizontally */
 }
 
 /* Wumpus Image */
 .wumpus-image {
   max-width: 250px;
   transition: transform 0.3s ease; /* Smooth animation for hover effects */
+}
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .wumpus-image {
+    max-width: 150px; /* Scale down Wumpus on small screens */
+  }
+
+  .wumpus-container {
+    margin-bottom: 20px; /* Add some space below the container */
+  }
+}
+
+@media (max-width: 480px) {
+  .wumpus-image {
+    max-width: 120px; /* Further scale down Wumpus on very small screens */
+  }
+
+  .wumpus-container {
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
+  }
 }
 
 /* User Tag */
@@ -214,21 +254,24 @@ body {
 /* Text Bubble */
 .text-bubble {
   position: absolute;
-  top: -60px; /* Position above Wumpus */
+  top: -70px; /* Position above Wumpus */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-60%);
   background-color: #7289da; /* Discord purple */
   color: white;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   font-family: "Roboto", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
+  white-space: normal; /* Allow the text to wrap */
   visibility: hidden; /* Initially hidden */
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: calc(100% - 120px); /* Prevent overflow beyond screen width, accounting for sidebar and padding */
+  word-wrap: break-word; /* Ensure long words break properly */
+  z-index: 10; /* Ensure it's above other elements */
 }
 
 /* Text Bubble Arrow */
@@ -239,9 +282,23 @@ body {
   left: 50%;
   transform: translateX(-50%);
   border-width: 20px;
-  border-style: solid;
   border-color: #7289da transparent transparent transparent; /* Arrow pointing down */
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .text-bubble {
+    max-width: calc(100% - 100px); /* Adjust max-width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-bubble {
+    max-width: calc(100% - 80px); /* Further adjust max-width on very small screens */
+    font-size: 14px; /* Slightly reduce font size for better fit */
+  }
+}
+
 
 /* Hidden Class */
 .hidden {
@@ -366,3 +423,4 @@ body {
     background-position: -200% center;
   }
 }
+
