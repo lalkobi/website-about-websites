@@ -4,7 +4,7 @@ A platform designed to help users create their own websites, offering tutorials,
 
 ## Live Demo
 
-Check out the live version of the site [here](https://yourusername.github.io/repository-name).
+Check out the live version of the site [here]([https://yourusername.github.io/repository-name](https://lalkobi.github.io/website-about-websites/index.html)).
 
 ## Features
 
